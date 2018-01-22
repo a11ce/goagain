@@ -1,0 +1,38 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body onload="loadScript();"style="background-color:#000000;">
+
+  <script>
+  function loadScript()
+  {
+    alert("ok");
+    var button = document.getElementById('buttonD');
+    var audio = document.getElementById('D');
+
+    var onClickD = function() {
+      audio.pause();
+      audio.currentTime = 0;
+      audio.play();
+    };
+    button.addEventListener('click', onClickD, false);
+  }
+  </script>
+
+  <audio id="A" src="A.wav" preload="auto"></audio>
+  <audio id="D" src="D.wav" preload="auto"></audio>
+
+
+  <div class="row">
+    <div class="col-md-6 col-sm-6 clickable">
+      <button id="buttonD" style="height:100%;width:100%;"type="button" class="btn btn-primary">D</button>
+    </div>
+    <div class="col-md-6 col-sm-6 clickable">
+      <button type="button"  onclick="document.getElementById('A').pause;document.getElementById('A').currentTime = 0;document.getElementById('A').play();" style="height:100%;width:100%;"type="button" class="btn btn-success">A</button>
+    </div>
+
+  </div>
+</body>
